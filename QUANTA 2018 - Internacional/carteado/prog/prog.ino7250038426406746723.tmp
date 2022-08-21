@@ -1,0 +1,93 @@
+//--------------------------------------------------------------
+// Hugo Rafael de Lima
+// código das rodinha
+//--------------------------------------------------------------
+// definindo os pinos
+
+// lado A
+#define pinFrente_A  25
+#define pinTras_A  24
+#define pinEnable_A 2
+
+// lado B
+#define pinFrente_B  53
+#define pinTras_B  52
+#define pinEnable_B 3
+
+//--------------------------------------------------------------
+// função que faz ir pra frente
+
+void frente( void ){
+
+	unsigned long long temp = millis();
+
+	while( (millis() - temp) < 3000 ){
+
+		Serial.println("Estou indo pra frente");
+
+		//lado A
+		analogWrite(pinEnable_A, 255);
+		digitalWrite(pinFrente_A, HIGH);
+		digitalWrite(pinTras_B, LOW);
+
+		// lado B
+		analogWrite(pinEnable_B, 255);
+		digitalWrite(pinFrente_B, HIGH);
+		digitalWrite(pinTras_B, LOW);		
+
+	}
+
+}
+
+//--------------------------------------------------------------
+// função que faz ir pra trás
+
+void tras( void ){
+
+	unsigned long long temp = millis();
+
+	while( (millis() - temp) < 3000 ){
+
+		Serial.println("Estou indo pra tras");
+		
+		// lado A
+		analogWrite(pinEnable_A, 255);
+		digitalWrite(pinFrente_A, LOW);
+		digitalWrite(pinTras_B, HIGH);
+		
+		// lado B
+		analogWrite(pinEnable_B, 255);
+		digitalWrite(pinFrente_B, LOW);
+		digitalWrite(pinTras_B, HIGH);
+
+	}
+
+}
+
+//--------------------------------------------------------------
+
+void setup( void ){
+
+	// lado A
+	analogWrite(pinEnable_A, OUTPUT);
+	digitalWrite(pinFrente_A, OUTPUT);
+	digitalWrite(pinTras_B, OUTPUT);
+
+	// lado B
+	analogWrite(pinEnable_B, OUTPUT);
+	digitalWrite(pinFrente_B, OUTPUT);
+	digitalWrite(pinTras_B, OUTPUT);
+
+}
+
+//--------------------------------------------------------------
+
+void loop( void ){
+
+	frente();
+
+	tras();
+
+}
+
+//--------------------------------------------------------------
