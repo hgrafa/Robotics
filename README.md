@@ -24,7 +24,7 @@ Was a competition held with the objective of creating an autonomous robot, with 
 2. avoid obstacles
 3. find, capture, move and drop objects.
 
-## 📌 My Opinion
+### 📌 My Opinion
 
 We did a good job in this competition, our robot was the most performant in tight turns due to the control we programmed. I think it's a good inspiration, but as a personal recommendation I wouldn't program 100% of the project in the lego interface, unless I had a powerful computer.
 
